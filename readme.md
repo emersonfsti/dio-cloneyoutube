@@ -28,4 +28,4 @@ Neste desafio, você colocará a mão na massa e irá clonar a página do YouTub
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/emersonfsti/dio-Youtube-CSS
+   git clone https://github.com/emersonfsti/dio-cloneyoutube
