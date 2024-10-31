@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* header */
+.material-icons {
+    color: rgb(96, 96, 96);
+}
+
+header {
+    position: fixed; /* Fixa o header no topo */
+    top: 0; /* Alinha no topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Ocupa toda a largura da tela */
+    z-index: 100; /* Garante que o header fique acima dos outros elementos */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 15px;
+    background: linear-gradient(to right, #c0bfbf, #ffffff, #c1c2c2);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logoyoutube {
+    width: 100px;
+    margin-left: 15px;
+}
+
+header i {
+    padding: 0px 7px;
+    cursor: pointer;
+}
+
+.header-search form {
+    border: 1px solid #ddd;
+    height: 35px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    border-radius: 75px;
+}
+
+.header-search input {
+    width: 500px;
+    padding: 10px;
+    margin: 0;
+    border-radius: 75px;
+    border: none;
+}
+
+.header-search button {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    border: none;
+    border-radius: 75px;
+}
+
+.header-right .logo-image {
+    width: 30px;
+    padding: 1px;
+    border-radius: 50%;
+}
+
+/* MainBody */
+main {
+    display: flex;
+    overflow: hidden;
+    margin-top: 85px; /* Garante que o conteúdo comece abaixo do header */
+}
+
+/* sidebar*/
+.sidebar {
+    height: 100%;
+    width: 230px;
+    background: linear-gradient(to right, #d1d0d0, #ffffff);
+    overflow: scroll;
+}
+
+.sidebar-categories {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    margin-top: 15px;
+}
+
+.sidebar-category {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+}
+
+.sidebar-category span {
+    margin-left: 15px;
+}
+
+.sidebar-category:hover {
+    background: #cecdcd;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+hr {
+    height: 1px;
+    background-color: #e5e5e5;
+    border: none;
+}
+
+/* Estilizando o main como um grid */
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* Sidebar e Recommended com 1 parte, Video Feed com 2 */
+    gap: 10px;
+    /* Espaço entre as colunas */
+    height: 100vh;
+    /* Preenche a altura total da janela */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+.video-feed {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    overflow: hidden; /* Oculta a barra de rolagem */
+}
+
+.video-thumbnail img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.recommended-videos {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-y: auto;
+}
+
+.recommended-item {
+    
+    display: grid;
+    align-items: center;
+    margin-bottom: 15px;
+    grid-template-columns: 1fr 11fr;
+}
+
+.recommended-item img {
+    width: 180px;
+    height: 100px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.recommended-item .nome-recomendado {
+    display: block;
+    font-size: 15px;
+    color: #000000;
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        /* Empilha as seções */
+    }
+
+    .sidebar {
+        display: none;
+        /* Oculta a sidebar em telas menores */
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-search {
+        display: none; /* Oculta a barra de pesquisa em telas menores */
+    }
+
+    .header-left .logoyoutube {
+        width: 80px;
+    }
+
+    .header-right {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-left .material-icons {
+        font-size: 24px;
+    }
+
+    .header-right .material-icons {
+        font-size: 20px;
+    }
+
+    .header-right .logo-image {
+        width: 30px;
+        height: 30px;
+    }
+}
